@@ -1,0 +1,10 @@
+<% layout('../layout') %>
+<p>Hello. I'm Will Ricketts. I'm a software engineer from Atlanta, Georgia.</p>
+  
+  <h3>Writings</h3>
+  
+  <% posts.forEach(function(post) { %>
+    <a href="<%= post.slug %>"><%= post.title %></a>
+    <p><%= post.content %></p>
+  <% }); %>
+      
