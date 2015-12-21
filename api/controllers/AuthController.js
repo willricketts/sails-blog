@@ -16,10 +16,13 @@ function login(req, res) {
 }
 
 function doLogin(req, res) {
+  var b = req.body;
   console.log(req.body);
-  console.log(req.params);
+  auth.validate(b.email, b.password, function(err, result) {
+    console.log(err, result);
+  });
 }
 
 function logout(req, res) {
-
+  console.log(req.session);
 }

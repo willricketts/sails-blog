@@ -1,16 +1,16 @@
 var bcrypt = require('bcrypt');
 
 module.exports = {
-  valid: valid
+  validate: validate
 };
 
-function valid(username, plaintext, callback) {
+function validate(email, plaintext, callback) {
   hashPlaintext(plaintext, function(err, hash) {
     if(err) {
       callback(err, null);
     }
     else {
-      getUserHash(username, function(err, userHash) {
+      getUserHash(email, function(err, userHash) {
         if(err) {
           callback(err, null);
         }
@@ -49,6 +49,9 @@ function compareHash(submittedHash, storedHash, callback) {
 function getUserHash(email, callback) {
   User.findOne({ email: email }, function(err, user) {
     if(err) {
+      callback(err, null);
+    }
+    else if(!user) {
       callback(err, null);
     }
     else {
