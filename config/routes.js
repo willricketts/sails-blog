@@ -32,7 +32,11 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  'get /' : 'PageController.index'
+  'get /' : 'PageController.index',
+  
+  // AUTH ROUTES
+  'get /login' : 'AuthController.login',
+  'post /login' : 'AuthController.doLogin'
 
   /***************************************************************************
   *                                                                          *
