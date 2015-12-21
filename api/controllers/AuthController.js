@@ -19,7 +19,16 @@ function doLogin(req, res) {
   var b = req.body;
   console.log(req.body);
   auth.validate(b.email, b.password, function(err, result) {
-    console.log(err, result);
+    if(err) {
+      res.serverError(err)
+    }
+    else if(result) {
+      req.session.authenticated = true;
+      res.redirect('/admin');
+    }
+    else {
+      res.redirect('/login')
+    }
   });
 }
 
