@@ -8,7 +8,9 @@
 module.exports = {
   login: login,
   doLogin: doLogin,
-  logout: logout
+  logout: logout,
+  createAdmin: createAdmin,
+  doCreateAdmin: doCreateAdmin
 }
 
 function login(req, res) {
@@ -34,4 +36,27 @@ function doLogin(req, res) {
 
 function logout(req, res) {
   console.log(req.session);
+}
+
+function createAdmin(req, res) {
+  res.view();
+}
+
+function doCreateAdmin(req, res) {
+  var b = req.body;
+  
+  auth.hashPlaintext(b.password, function(hash) {
+    User.create({ email: b.email, firstName: b.firstName, lastName: b.lastName, password: hash, admin: true }, function(err, user) {
+      if(err) {
+        res.serverError(err);
+      }
+      else if(!user) {
+        res.serverError();
+      }
+      else {
+        req.session.authenticated = true;
+        res.redirect('/');
+      }
+    });
+  });
 }

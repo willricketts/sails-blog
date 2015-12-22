@@ -37,6 +37,9 @@ module.exports.routes = {
   // AUTH ROUTES
   'get /login' : 'AuthController.login',
   'post /login' : 'AuthController.doLogin',
+  'get /logout' : 'AuthController.logout',
+  'get /createAdmin' : 'AuthController.createAdmin',
+  'post /createAdmin' : 'AuthController.doCreateAdmin',
   
   // POST ROUTES
   'get /new' : 'PostController.create'
