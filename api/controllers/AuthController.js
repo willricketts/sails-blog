@@ -25,7 +25,7 @@ function doLogin(req, res) {
       res.serverError(err)
     }
     else if(result) {
-      req.session.authenticated = true;
+      //req.session.authenticated = true;
       res.redirect('/admin');
     }
     else {
@@ -45,7 +45,7 @@ function createAdmin(req, res) {
 function doCreateAdmin(req, res) {
   var b = req.body;
   
-  auth.hashPlaintext(b.password, function(hash) {
+  auth.hashPlaintext(b.password, function(err, hash) {
     User.create({ email: b.email, firstName: b.firstName, lastName: b.lastName, password: hash, admin: true }, function(err, user) {
       if(err) {
         res.serverError(err);
@@ -54,7 +54,7 @@ function doCreateAdmin(req, res) {
         res.serverError();
       }
       else {
-        req.session.authenticated = true;
+        //req.session.authenticated = true;
         res.redirect('/');
       }
     });
