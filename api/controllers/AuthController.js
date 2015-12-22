@@ -26,7 +26,7 @@ function doLogin(req, res) {
     }
     else if(result) {
       req.session.authenticated = true;
-      res.redirect('/admin');
+      res.redirect('/dashboard');
     }
     else {
       res.redirect('/login')

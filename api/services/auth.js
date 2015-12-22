@@ -37,7 +37,7 @@ function hashPlaintext(plaintext, callback) {
 }
 
 function compareHash(plaintext, storedHash, callback) {
-  bcrypt.compare(plaintext, stored, function(err, res) {
+  bcrypt.compare(plaintext, storedHash, function(err, res) {
     callback(res);
   });
 }
