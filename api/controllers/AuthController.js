@@ -19,14 +19,24 @@ function login(req, res) {
 
 function doLogin(req, res) {
   var b = req.body;
-  console.log(req.body);
   auth.validate(b.email, b.password, function(err, result) {
     if(err) {
       res.serverError(err)
     }
     else if(result) {
-      req.session.authenticated = true;
-      res.redirect('/dashboard');
+      User.findOne({ email: b.email }, function(err, user) {
+        if(err) {
+          res.serverError(err);
+        }
+        else if(!user) {
+          res.serverError();
+        }
+        else {
+          req.session.id = user.id;
+          req.session.authenticated = true;
+          res.redirect('/dashboard');
+        }
+      });
     }
     else {
       res.redirect('/login')
@@ -36,6 +46,7 @@ function doLogin(req, res) {
 
 function logout(req, res) {
   req.session.authenticated = false;
+  delete req.session.id;
   res.redirect('/');
 }
 

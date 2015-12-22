@@ -10,7 +10,6 @@ module.exports = {
 };
 
 function index(req, res) {
-  console.log(req.session);
   Post.find({}, function(err, posts) {
     if(err) {
       res.send(err);
