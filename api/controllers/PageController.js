@@ -17,7 +17,7 @@ function index(req, res) {
     else {
       var postsPayload = [];
       for(var i in posts) {
-        postsPayload.push({ title: posts[i].title, content: posts[i].content, slug: 'post/' + posts[i].slug });
+        postsPayload.push({ title: posts[i].title, content: posts[i].content, slug: 'blog/' + posts[i].slug });
       }
       res.view({ posts: postsPayload });
     }

@@ -16,7 +16,7 @@ function create(req, res) {
 function doCreate(req, res) {
   var b = req.body;
   
-  Post.create({ title: b.title, content: b.content, slug: slugify(b.title) }, function(err, post) {
+  Post.create({ title: b.title, content: b.content, slug: slugify(b.title.toLowerCase()) }, function(err, post) {
     if(err) {
       res.serverError(err);
     }
@@ -27,15 +27,20 @@ function doCreate(req, res) {
 }
 
 function show(req, res) {
-  Post.findOne({ id: req.params.id }, function(err, post) {
+  Post.findOne({ slug: req.params.slug }, function(err, post) {
     if(err) {
-      res.send(err);
+      res.serverError();
     }
     else if(!post) {
-      res.render('404');
+      res.notFound();
     }
     else {
-      res.view({ title: post.title, content: post.content, id: post.id });
+      var postPayload = {
+        title: post.title,
+        content: post.content
+      };
+      
+      res.view({ post: postPayload });
     }
   });
 }

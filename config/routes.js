@@ -45,7 +45,9 @@ module.exports.routes = {
   'get /dashboard' : 'AdminController.dashboard',
   
   // POST ROUTES
-  'get /new' : 'PostController.create'
+  'get /new' : 'PostController.create',
+  'post /new' : 'PostController.doCreate',
+  'get /blog/:slug' : 'PostController.show'
 
   /***************************************************************************
   *                                                                          *
