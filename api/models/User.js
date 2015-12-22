@@ -6,6 +6,9 @@
 */
 
 module.exports = {
+  
+  connection: 'mongodb',
+  schema: true,
 
   attributes: {
     firstName: {
