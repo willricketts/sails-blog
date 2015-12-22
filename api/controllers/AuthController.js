@@ -25,7 +25,7 @@ function doLogin(req, res) {
       res.serverError(err)
     }
     else if(result) {
-      //req.session.authenticated = true;
+      req.session.authenticated = true;
       res.redirect('/admin');
     }
     else {
@@ -35,7 +35,8 @@ function doLogin(req, res) {
 }
 
 function logout(req, res) {
-  console.log(req.session);
+  req.session.authenticated = false;
+  res.redirect('/');
 }
 
 function createAdmin(req, res) {
@@ -54,7 +55,7 @@ function doCreateAdmin(req, res) {
         res.serverError();
       }
       else {
-        //req.session.authenticated = true;
+        req.session.authenticated = true;
         res.redirect('/');
       }
     });

@@ -13,6 +13,7 @@
  */
 
 module.exports.session = {
+    adapter: 'redis',
 
   /***************************************************************************
   *                                                                          *
@@ -23,10 +24,9 @@ module.exports.session = {
   ***************************************************************************/
   secret: process.env.REDIS_SECRET,
 
-  adapter: 'redis',
-
   host: process.env.REDIS_HOST,
   port: process.env.REDIS_PORT,
+  db: process.env.REDIS_DB,
   //ttl: <redis session TTL in seconds>,
   pass: process.env.REDIS_PASS,
   prefix: 'sess:'
