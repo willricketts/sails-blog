@@ -10,6 +10,13 @@ module.exports = {
 };
 
 function dashboard(req, res) {
-  res.view();
+  Post.find({}, function(err, posts) {
+    if(err) {
+      res.serverError(err);
+    }
+    else {
+      res.view({ posts: posts });
+    }
+  });
 }
 

@@ -21,7 +21,7 @@ function doCreate(req, res) {
       res.serverError(err);
     }
     else {
-      res.redirect('/');
+      res.redirect('/dashboard');
     }
   });
 }
@@ -46,29 +46,39 @@ function show(req, res) {
 }
 
 function update(req, res) {
-  res.view();
+  Post.findOne({ slug: req.params.slug }, function(err, post) {
+    if(err) {
+      res.serverError(err);
+    }
+    else if(!post) {
+      res.notFound();
+    }
+    else {
+      res.view({ post: post });
+    }
+  })
 }
 
 function doUpdate(req, res) {
   var b = req.body;
   
-  Post.update({ id: b.id }, { title: b.title, content: b.content }, function(err, post) {
+  Post.update({ slug: req.params.slug }, { title: b.title, content: b.content }, function(err, post) {
     if(err) {
       res.serverError(err);
     }
     else {
-      res.redirect('/' + post.slug);
+      res.redirect('/dashboard');
     }
   });
 }
 
 function destroy(req, res) {
-  Post.remove({ slug: req.params.id }, function(err, post) {
+  Post.destroy({ slug: req.params.slug }, function(err, post) {
     if(err) {
       res.serverError();
     }
     else {
-      res.redirect('/');
+      res.redirect('/dashboard');
     }
   });
 }
