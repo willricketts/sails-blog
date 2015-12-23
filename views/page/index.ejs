@@ -1,28 +1,40 @@
 <% layout('../layout') %>
 <div class="row">
-  <div class="grid-full">
-    <h1>Bonjour!</h1>
+  <div class="grid-two-thirds float-center">
+    <h1 class="title">Bonjour!</h1>
   </div>
 </div>
-
 
 <div class="row">
-  <div class="grid-full">
+  <div class="grid-two-thirds float-center">
     <p>Hello. I'm Will Ricketts. I'm a software engineer from Atlanta, Georgia.</p>
+    <p>I tweet from <a href="http://twitter.com/willricketts">@willricketts</a>.</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="grid-two-thirds float-center">
+    <h3>Projects</h3>
+  </div>
+</div>
+
+<div class="row">
+  <div class="grid-two-thirds float-center">
+    <h3>Adventures</h3>
   </div>
 </div>
   
+<div class="row">
+  <div class="grid-two-thirds float-center">
+    <h3>Writings</h3>
+  </div>
+</div>
+
+<% posts.forEach(function(post) { %>
   <div class="row">
-    <div class="grid-full">
-      <h3>Writings</h3>
+    <div class="grid-two-thirds float-center">
+      <a href="<%= post.slug %>"><%= post.title %></a>
     </div>
   </div>
-  
-  <% posts.forEach(function(post) { %>
-    <div class="row">
-      <div class="grid-fourth">
-        <a href="<%= post.slug %>"><%= post.title %></a>
-      </div>
-    </div>
-  <% }); %>
+<% }); %>
       
