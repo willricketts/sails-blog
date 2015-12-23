@@ -13,7 +13,7 @@ module.exports = {
 }
 
 function create(req, res) {
-  res.view();
+  res.view({ title: 'New Post' });
 }
 
 function doCreate(req, res) {
@@ -42,7 +42,7 @@ function show(req, res) {
         title: post.title,
         content: converter.makeHtml(post.content)
       };
-      res.view({ post: postPayload });
+      res.view({ title: post.title, post: postPayload });
     }
   });
 }
@@ -56,7 +56,7 @@ function update(req, res) {
       res.notFound();
     }
     else {
-      res.view({ post: post });
+      res.view({ title: 'Update Post', post: post });
     }
   })
 }

@@ -27,6 +27,12 @@ module.exports = {
     
     author: {
       model: 'user'
+    },
+    
+    published: {
+      type: 'boolean',
+      required: true,
+      defaultsTo: false
     }
   }
 };
