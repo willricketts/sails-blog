@@ -4,7 +4,10 @@
   <h3>Writings</h3>
   
   <% posts.forEach(function(post) { %>
-    <a href="<%= post.slug %>"><%= post.title %></a>
-    <p><%= post.content %></p>
+    <div class="row">
+      <div class="grid-fourth">
+        <a href="<%= post.slug %>"><%= post.title %></a>
+      </div>
+    </div>
   <% }); %>
       

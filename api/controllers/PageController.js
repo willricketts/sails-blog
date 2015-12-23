@@ -6,7 +6,9 @@
  */
 
 module.exports = {
-    index: index
+    index: index,
+    blogIndex: blogIndex,
+    blogPage: blogPage
 };
 
 function index(req, res) {
