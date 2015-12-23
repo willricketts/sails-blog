@@ -2,6 +2,8 @@ module.exports.routes = {
 
   // PAGE ROUTES
   'get /' : 'PageController.index',
+  'get /blog' : 'PageController.blogIndex',
+  'get /blog/page/:page' : 'PageController.blogPage',
   
   // AUTH ROUTES
   'get /login' : 'AuthController.login',
