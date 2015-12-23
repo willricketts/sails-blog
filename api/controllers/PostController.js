@@ -1,5 +1,4 @@
 var slugify = require('slugify');
-var marked = require('marked');
 var showdown = require('showdown');
 var converter = new showdown.Converter();
 
