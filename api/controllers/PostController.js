@@ -1,4 +1,5 @@
 var slugify = require('slugify');
+var marked = require('marked');
 
 module.exports = {
   create: create,
@@ -15,7 +16,7 @@ function create(req, res) {
 
 function doCreate(req, res) {
   var b = req.body;
-  
+  console.log(b);
   Post.create({ title: b.title, content: b.content, slug: slugify(b.title.toLowerCase()) }, function(err, post) {
     if(err) {
       res.serverError(err);
@@ -39,7 +40,6 @@ function show(req, res) {
         title: post.title,
         content: post.content
       };
-      
       res.view({ post: postPayload });
     }
   });
