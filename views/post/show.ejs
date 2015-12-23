@@ -3,8 +3,5 @@
 </div>
 
 <h3><%= post.title %></h3>
-<p id="content"></p>
 
-<script>
-  document.getElementById('content').innerHTML = marked("<%= post.content %>");
-</script>
+<%- post.content %>

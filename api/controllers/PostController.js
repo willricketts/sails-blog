@@ -1,5 +1,7 @@
 var slugify = require('slugify');
 var marked = require('marked');
+var showdown = require('showdown');
+var converter = new showdown.Converter();
 
 module.exports = {
   create: create,
@@ -38,7 +40,7 @@ function show(req, res) {
     else {
       var postPayload = {
         title: post.title,
-        content: post.content
+        content: converter.makeHtml(post.content)
       };
       res.view({ post: postPayload });
     }
