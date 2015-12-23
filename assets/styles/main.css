@@ -17,6 +17,15 @@
   */
 
 
+p, a, li {
+  font-family: 'Merriweather', sans-serif;
+  font-size: 16px;
+}
+
+h3, h1 {
+  font-family: 'Merriweather', sans-serif;
+}
+
 .title {
   font-family: 'Merriweather', serif;
   font-weight: 700;
