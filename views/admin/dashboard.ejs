@@ -1,15 +1,11 @@
-<h1>Dashboard</h1>
-
 <div class="row">
-  <a href="/new">New Post</a>
+  <h1>Dashboard</h1>
 </div>
-
-
-<% for(var i in posts) { %>
-  <div class="row">
-    <a href="<%= '/blog/' + posts[i].slug %>"><%= posts[i].title %></a>
-    <%= posts[i].content %>
-    <a href="<%= '/edit/' + posts[i].slug %>">Edit</a>
-    <a href="<%= '/delete/' + posts[i].slug %>">Delete</a>
+<div class="row">
+  <div class="grid-half">
+    <a href="/new">New Post</a>
   </div>
-<% } %>
+  <div class="grid-half">
+    <a href="/thing/new">New Thing</a>
+  </div>
+</div>

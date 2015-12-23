@@ -17,7 +17,7 @@
   */
 
 
-p, a, li {
+p, a, li, label, .lines, .words, .cursor {
   font-family: 'Merriweather', sans-serif;
   font-size: 16px;
 }
