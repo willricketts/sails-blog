@@ -18,6 +18,27 @@
 
 
 module.exports.policies = {
+	
+	AdminController: {
+		dashboard: ['isAdmin', 'sessionAuth']
+	},
+	
+	PageController: {
+		'*': true
+	},
+	
+	PostController: {
+		'*': true,
+		create: ['hasAdmin', 'sessionAuth', 'isAdmin'],
+		doCreate: ['hasAdmin', 'sessionAuth', 'isAdmin'],
+		update: ['hasAdmin', 'sessionAuth', 'isAdmin'],
+		doUpdate: ['hasAdmin', 'sessionAuth', 'isAdmin'],
+		destroy: ['hasAdmin', 'sessionAuth', 'isAdmin']
+	},
+	
+	UserController: {
+		'*': ['hasAdmin', 'sessionAuth', 'isAdmin']
+	}
 
   /***************************************************************************
   *                                                                          *
