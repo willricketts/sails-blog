@@ -34,13 +34,13 @@
   </div>
 </div>
 
-<ul>
 <% posts.forEach(function(post) { %>
   <div class="row">
     <div class="grid-two-thirds float-center">
-      <li><a href="<%= post.slug %>"><%= post.title %></a> | <%= post.date %></li>
+      <a href="<%= post.slug %>"><%= post.title %></a><br />
+      <h5><%= post.date %></h5>
     </div>
   </div>
 <% }); %>
-</ul>
+
       
