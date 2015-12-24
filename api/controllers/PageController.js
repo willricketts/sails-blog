@@ -37,18 +37,24 @@ function index(req, res) {
 }
 
 function blogIndex(req, res) {
-  Post.find({}, function(err, posts) {
+  /*Post.find({}, function(err, posts) {
     if(err) {
       res.send(err);
     }
     else {
       var postsPayload = [];
       for(var i in posts) {
-        postsPayload.push({ title: posts[i].title, content: posts[i].content, slug: 'blog/' + posts[i].slug });
+        postsPayload.push({
+          title: posts[i].title,
+          content: posts[i].content,
+          slug: 'blog/' + posts[i].slug,
+          date: moment(posts[i].createdAt).format('MMMM Do YYYY')
+        });
       }
       res.view({ posts: postsPayload });
     }
-  });
+  });*/
+  res.redirect('/blog/page/1');
 };
 
 function blogPage(req, res) {
@@ -59,7 +65,12 @@ function blogPage(req, res) {
     else {
       var postsPayload = [];
       for(var i in posts) {
-        postsPayload.push({ title: posts[i].title, content: posts[i].content, slug: 'blog/' + posts[i].slug });
+        postsPayload.push({
+          title: posts[i].title,
+          content: posts[i].content,
+          slug: 'blog/' + posts[i].slug,
+          date: moment(posts[i].createdAt).format('MMMM Do YYYY')
+        });
       }
       res.view({ posts: postsPayload });
     }
