@@ -20,16 +20,35 @@
 p, a, li, label, .lines, .words, .cursor {
   font-family: 'Merriweather', sans-serif;
   font-size: 16px;
+  color: #444;
 }
 
 h3, h1 {
   font-family: 'Merriweather', sans-serif;
+  color: #444;
 }
 
 .title {
   font-family: 'Merriweather', serif;
-  font-weight: 700;
   font-size: 60px;
+  color: #444;
+  font-weight: 900;
+}
+
+.category {
+  font-weight: 900;
+}
+
+body {
+  background-image: url('http://i.imgur.com/Bf6njtq.jpg'); 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color: #272727;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 100%;
+  line-height: 1.5;
 }
 
 @-webkit-viewport {
@@ -369,13 +388,7 @@ figure {
  * Sets font styles for entire site
  */
 /* line 6, /Users/cferdinandi/Sites/kraken/src/sass/components/_typography.scss */
-body {
-  background: #ffffff;
-  color: #272727;
-  font-family: "Helvetica Neue", Arial, sans-serif;
-  font-size: 100%;
-  line-height: 1.5;
-}
+
 
 @media (min-width: 40em) {
   /* line 6, /Users/cferdinandi/Sites/kraken/src/sass/components/_typography.scss */
