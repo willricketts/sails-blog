@@ -1,6 +1,7 @@
 var slugify = require('slugify');
 var showdown = require('showdown');
 var converter = new showdown.Converter();
+var moment = require('moment');
 
 module.exports = {
   create: create,
@@ -39,7 +40,8 @@ function show(req, res) {
     else {
       var postPayload = {
         title: post.title,
-        content: converter.makeHtml(post.content)
+        content: converter.makeHtml(post.content),
+        date: moment(post.createdAt).format('MMMM Do YYYY')
       };
       res.view({ title: post.title, post: postPayload });
     }
