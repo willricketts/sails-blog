@@ -2,14 +2,16 @@
 <div class="row">
   <div class="grid-two-thirds float-center">
       <h1 class="title">Bonjour!</h1>
-      <p>Hello. I'm Will Ricketts. I'm a software engineer from Atlanta, Georgia. I tweet from <a target="_blank" href="http://twitter.com/willricketts">@willricketts</a> and regularly push code to <a target="_blank" href="http://github.com/willricketts">Github</a>.</p>
+      <p>Hello! I'm Will Ricketts. I'm a software engineer from Atlanta, Georgia. I specialize in <a href="http://nodejs.org">Node.js</a>, <a href="http://golang.org">Go</a>,
+        <a href="http://bitcoin.org">Bitcoin</a> / <a href="https://en.wikipedia.org/wiki/Block_chain_(database)">Blockchain</a> development, and decentralized systems.
+        I tweet from <a target="_blank" href="http://twitter.com/willricketts">@willricketts</a> and regularly push code to <a target="_blank" href="http://github.com/willricketts">Github</a>.</p>
+        <p>I'm also an avid cyclist and rock climber, and I frequently post pictures of my adventures to <a href="http://instagram.com/willricketts">Instagram</a>.</p>
   </div>
 </div>
-
 <div class="row">
   <div class="grid-two-thirds float-center">
     <h3 class="category">Projects</h3>
-    <ul>
+    <ul class="list-unstyled">
       <li><a target="_blank" href="https://github.com/AssPennyFoundation/AssPennies" >AssPennies Cryptocurrency</a></li>
       <li><a target="_blank" href="http://github.com/procur">Procur</a></li>
       <li><a target="_blank" href="https://github.com/willricketts/archer">Archer</a></li>
@@ -18,27 +20,24 @@
     </ul>
   </div>
 </div>
-
 <div class="row">
   <div class="grid-two-thirds float-center">
     <h3 class="category">Adventures</h3>
-    <ul>
+    <ul class="list-unstyled">
       <li><a href="http://willricketts.com/a-cascadian-odyssey-part-1/">A Cascadian Odyssey</a></li>
     </ul>
   </div>
 </div>
-  
 <div class="row">
   <div class="grid-two-thirds float-center">
     <h3 class="category">Writings</h3>
   </div>
 </div>
-
 <% posts.forEach(function(post) { %>
   <div class="row">
     <div class="grid-two-thirds float-center">
       <a href="<%= post.slug %>"><%= post.title %></a><br />
-      <h5><%= post.date %></h5>
+      <h5 class="articleDate"><%= post.date %></h5>
     </div>
   </div>
 <% }); %>
