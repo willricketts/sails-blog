@@ -4,11 +4,14 @@
  * @description :: Server-side logic for managing pages
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
+ 
+var RSS = require('rss');
 
 module.exports = {
     index: index,
     blogIndex: blogIndex,
-    blogPage: blogPage
+    blogPage: blogPage,
+    rss: rss
 };
 
 function index(req, res) {
@@ -52,6 +55,26 @@ function blogPage(req, res) {
         postsPayload.push({ title: posts[i].title, content: posts[i].content, slug: 'blog/' + posts[i].slug });
       }
       res.view({ posts: postsPayload });
+    }
+  });
+}
+
+function rss(req, res) {
+  var feed = new RSS();
+  Post.find({}, function(err, posts) {
+    if(err) {
+      res.serverError(err);
+    }
+    else {
+      for(var i in posts) {
+        feed.item({
+          title: posts[i].title,
+          description: posts[i].content,
+          url: 'http://willricketts.com/blog/'+ posts[i].slug
+        });
+      }
+      console.log(feed.xml());
+      res.send(feed.xml());
     }
   });
 }

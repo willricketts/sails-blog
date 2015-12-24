@@ -23,7 +23,7 @@ p, a, li, label, .lines, .words, .cursor {
   color: #444;
 }
 
-h3, h1 {
+h1, h2, h3, h4, h5 {
   font-family: 'Merriweather', sans-serif;
   color: #444;
 }

@@ -29,8 +29,8 @@ module.exports.policies = {
 	
 	PostController: {
 		'*': true,
-		//create: ['hasAdmin', 'sessionAuth', 'isAdmin'],
-		//doCreate: ['hasAdmin', 'sessionAuth', 'isAdmin'],
+		create: ['hasAdmin', 'sessionAuth', 'isAdmin'],
+		doCreate: ['hasAdmin', 'sessionAuth', 'isAdmin'],
 		update: ['hasAdmin', 'sessionAuth', 'isAdmin'],
 		doUpdate: ['hasAdmin', 'sessionAuth', 'isAdmin'],
 		destroy: ['hasAdmin', 'sessionAuth', 'isAdmin']

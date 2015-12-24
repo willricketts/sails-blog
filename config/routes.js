@@ -4,6 +4,7 @@ module.exports.routes = {
   'get /' : 'PageController.index',
   'get /blog' : 'PageController.blogIndex',
   'get /blog/page/:page' : 'PageController.blogPage',
+  //'get /rss' : 'PageController.rss',
   
   // AUTH ROUTES
   'get /login' : 'AuthController.login',
