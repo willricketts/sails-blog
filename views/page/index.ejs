@@ -16,11 +16,11 @@
   <div class="grid-two-thirds float-center">
     <h3>Projects</h3>
     <ul>
-      <li><a href="https://github.com/AssPennyFoundation/AssPennies">AssPennies Cryptocurrency</a></li>
-      <li><a href="http://github.com/procur">Procur</a></li>
-      <li><a href="https://github.com/willricketts/archer">Archer</a></li>
-      <li><a href="https://github.com/willricketts/SlimPickins">SlimPickins</a></li>
-      <li><a href="https://github.com/willricketts/WayneShorter">WayneShorter</a></li>
+      <li><a target="_blank" href="https://github.com/AssPennyFoundation/AssPennies" >AssPennies Cryptocurrency</a></li>
+      <li><a target="_blank" href="http://github.com/procur">Procur</a></li>
+      <li><a target="_blank" href="https://github.com/willricketts/archer">Archer</a></li>
+      <li><a target="_blank" href="https://github.com/willricketts/SlimPickins">SlimPickins</a></li>
+      <li><a target="_blank" href="https://github.com/willricketts/WayneShorter">WayneShorter</a></li>
     </ul>
   </div>
 </div>
@@ -40,11 +40,13 @@
   </div>
 </div>
 
+<ul>
 <% posts.forEach(function(post) { %>
   <div class="row">
     <div class="grid-two-thirds float-center">
-      <a href="<%= post.slug %>"><%= post.title %></a>
+      <li><a href="<%= post.slug %>"><%= post.title %></a></li>
     </div>
   </div>
 <% }); %>
+</ul>
       
