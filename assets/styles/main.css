@@ -63,6 +63,11 @@ h1, h2, h3, h4, h5 {
   
 }
 
+.footer {
+  padding-top: 50px;
+  font-size: 12px;
+}
+
 body {
   /* background-image: url('http://i.imgur.com/Bf6njtq.jpg'); */
   -webkit-background-size: cover;
