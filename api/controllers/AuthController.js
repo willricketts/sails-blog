@@ -10,7 +10,9 @@ module.exports = {
   doLogin: doLogin,
   logout: logout,
   createAdmin: createAdmin,
-  doCreateAdmin: doCreateAdmin
+  doCreateAdmin: doCreateAdmin,
+  setup: setup,
+  doSetup: doSetup
 }
 
 function login(req, res) {
@@ -71,4 +73,12 @@ function doCreateAdmin(req, res) {
       }
     });
   });
+}
+
+function setup(req, res) {
+  res.view();
+}
+
+function doSetup(req, res) {
+  
 }

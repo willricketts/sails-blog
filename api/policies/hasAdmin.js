@@ -7,7 +7,7 @@ module.exports = function(req, res, next) {
      return next(); 
     }
     else {
-      res.redirect('/');
+      res.redirect('/setup');
     }
   });
 }

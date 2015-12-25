@@ -15,3 +15,9 @@
 <script>
   var simplemde = new SimpleMDE({ element: document.getElementById("content-editor") });
 </script>
+
+<form action="/uploadimage" method="post" enctype="multipart/form-data" id="upload-form">
+  <label>Upload Image</label>
+  <input type="file" name="imagePayload" id="uploader">
+  <button type="submit" form="upload-form" class="btn btn-blue">Upload Image</button>
+</form>
