@@ -80,5 +80,20 @@ function setup(req, res) {
 }
 
 function doSetup(req, res) {
+  var b = req.body;
   
+  User.create({
+    firstName: b.firstName,
+    lastName: b.lastName,
+    email: b.email,
+    password: b.password,
+    admin: true
+  }, function(err, user) {
+    if(err) {
+      res.serverError(err);
+    }
+    else {
+      res.redirect('/dashboard');
+    }
+  });
 }
