@@ -1,11 +1,18 @@
 <% layout('../layout') %>
 <div class="row">
+  <div class="grid-third"> 
+    <h1 class="title">Bonjour!</h1>
+  </div>
+  <div class="grid-third offset-third">
+    <h1 class="title">oyaaaa</h1>
+  </div>
+</div>
+<div class="row">
   <div class="grid-two-thirds float-center">
-      <h1 class="title">Bonjour!</h1>
-      <p>Hello! I'm Will Ricketts. I'm a software engineer from Atlanta, Georgia. I specialize in <a href="http://nodejs.org">Node.js</a>, <a href="http://golang.org">Go</a>,
-        <a href="http://bitcoin.org">Bitcoin</a> / <a href="https://en.wikipedia.org/wiki/Block_chain_(database)">Blockchain</a> development, and decentralized systems.
+    <p>Hello! I'm Will Ricketts. I'm a software engineer from Atlanta, Georgia. I specialize in <a href="http://nodejs.org">Node.js</a>, <a href="http://golang.org">Go</a>,
+      <a href="http://bitcoin.org">Bitcoin</a> / <a href="https://en.wikipedia.org/wiki/Block_chain_(database)">Blockchain</a> development, and decentralized systems.
         I tweet from <a target="_blank" href="http://twitter.com/willricketts">@willricketts</a> and regularly push code to <a target="_blank" href="http://github.com/willricketts">Github</a>.</p>
-        <p>I'm also an avid cyclist and rock climber, and I frequently post pictures of my adventures to <a href="http://instagram.com/willricketts">Instagram</a>.</p>
+      <p>I'm also an avid cyclist and rock climber, and I frequently post pictures of my adventures to <a href="http://instagram.com/willricketts">Instagram</a>.</p>
   </div>
 </div>
 <div class="row">
@@ -31,6 +38,9 @@
 <div class="row">
   <div class="grid-two-thirds float-center">
     <h3 class="category">Writings</h3>
+    <ul class="list-unstyled">
+      <li><a href="http://willricketts.com/an-atlanta-safari/">An Atlanta Safari</a></li>
+    </ul>
   </div>
 </div>
 <% posts.forEach(function(post) { %>
