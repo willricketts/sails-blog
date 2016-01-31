@@ -1,3 +1,3 @@
-# blog
+# willricketts.com
 
-a [Sails](http://sailsjs.org) application
+A redesign of my personal site
